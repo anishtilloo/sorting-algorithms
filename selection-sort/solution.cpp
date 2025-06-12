@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 class Solution
@@ -32,6 +34,28 @@ public:
         return nums;
     }
 
+    vector<int> selectionSort1(vector<int> &nums)
+    {
+        for (int i = 0; i < nums.size(); i++)
+        {
+            int minEle = i;
+            /* code */
+            for (int j = i + 1; j < nums.size(); j++)
+            {
+                /* code */
+                if(nums[j < nums[minEle]]) {
+                    minEle = j;
+                }
+
+            }
+
+            if(minEle != i) {
+                swap(nums[minEle], nums[i]);
+            } 
+        }
+        return nums;
+    }
+
 private:
     void swapElement(int iInd, int jInd, vector<int> &nums)
     {
@@ -56,7 +80,7 @@ int main()
     cout << endl;
 
     // Function call for insertion sort
-    nums = solution.selectionSort(nums);
+    nums = solution.selectionSort1(nums);
 
     cout << "After Using Selection Sort: " << endl;
     for (int num : nums)

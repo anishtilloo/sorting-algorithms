@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class Solution
@@ -14,6 +15,25 @@ public:
                 swapElement(j, j - 1, nums);
                 j--;
             }
+        }
+        return nums;
+    }
+
+    vector<int> insertionSort1(vector<int> &nums) 
+    {
+        for (int i = 1; i < nums.size(); i++)
+        {
+            /* code */
+            int currEle = nums[i];
+            int prevInd = i - 1;
+            while (nums[prevInd] > currEle && prevInd >= 0)
+            {
+                /* code */
+                nums[prevInd + 1] = nums[prevInd];
+                prevInd--;
+
+            }
+            nums[prevInd + 1] = currEle;
         }
         return nums;
     }
@@ -42,7 +62,7 @@ int main()
     cout << endl;
 
     // Function call for insertion sort
-    nums = solution.insertionSort(nums);
+    nums = solution.insertionSort1(nums);
 
     cout << "After Using Insertion Sort: " << endl;
     for (int num : nums)
