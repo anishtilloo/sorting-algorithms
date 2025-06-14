@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class Solution
@@ -35,9 +36,9 @@ private:
         int left = low;
         int right = mid + 1;
 
-        // Loop until subarrays are exhausted
         while (left <= mid && right <= high)
         {
+        // Loop until subarrays are exhausted
             /* code */
             // Compare left and right elements
             if (nums[left] <= nums[right])
